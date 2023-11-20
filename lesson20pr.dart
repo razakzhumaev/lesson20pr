@@ -14,79 +14,78 @@ void main(List<String> args) {
 
   Aspirant aspirant = Aspirant();
   aspirant.getScholarship('aliaskar', 'zhumaev', 'first group', 5.0);
-  aspirant.getScholarship1('razak', 'zhumaev', 'second group', 3.0);
-  
+  aspirant.getScholarship2('razak', 'zhumaev', 'second group', 5.0);
 }
 
 class Animal {
-  makeNose(String name, String noise) {
+  void makeNose(String name, String noise) {
     print('$name $noise');
   }
 
-  eat(String name, String food) {
+  void eat(String name, String food) {
     print('$name ест $food');
   }
 
-  sleep({required String name}) {
+  void sleep({required String name}) {
     print('$name спит');
   }
 }
 
 class Dog extends Animal {
   @override
-  eat(String name, String food) {
-    return super.eat(name, food);
+  void eat(String name, String food) {
+    super.eat(name, food);
   }
 
   @override
-  sleep({required String name}) {
-    return super.sleep(name: name);
+  void sleep({required String name}) {
+    super.sleep(name: name);
   }
 
   @override
-  makeNose(String name, String noise) {
-    return super.makeNose(name, noise);
+  void makeNose(String name, String noise) {
+    super.makeNose(name, noise);
   }
 }
 
 class Cat extends Animal {
   @override
-  eat(String name, String food) {
-    return super.eat(name, food);
+  void eat(String name, String food) {
+    super.eat(name, food);
   }
 
   @override
-  sleep({required String name}) {
-    return super.sleep(name: name);
+  void sleep({required String name}) {
+    super.sleep(name: name);
   }
 
   @override
-  makeNose(String name, String noise) {
-    return super.makeNose(name, noise);
+  void makeNose(String name, String noise) {
+    super.makeNose(name, noise);
   }
 }
 
 class Horse extends Animal {
   @override
-  eat(String name, String food) {
-    return super.eat(name, food);
+  void eat(String name, String food) {
+    super.eat(name, food);
   }
 
   @override
-  sleep({required String name}) {
-    return super.sleep(name: name);
+  void sleep({required String name}) {
+    super.sleep(name: name);
   }
 
   @override
-  makeNose(String name, String noise) {
-    return super.makeNose(name, noise);
+  void makeNose(String name, String noise) {
+    super.makeNose(name, noise);
   }
 }
 
 // TASK2
 
 class Student {
-  getScholarship(
+  void getScholarship(
     String firstName,
     String lastName,
     String group,
@@ -100,16 +99,31 @@ class Student {
       print('Сумма сколаршипа 0 сом');
     }
   }
-}
 
-class Aspirant extends Student {
-  @override
-  getScholarship1(
+  void getScholarship2(
     String firstName,
     String lastName,
     String group,
     double averageMark,
   ) {
-    return super.getScholarship(firstName, lastName, group, averageMark);
+    print('$firstName $lastName $group , средняя оценка == $averageMark');
+
+    if (averageMark == 5) {
+      print('Сумма сколаршипа 40000');
+    } else {
+      print('Сумма сколаршипа 18000');
+    }
+  }
+}
+
+class Aspirant extends Student {
+  @override
+  void getScholarship2(
+    String firstName,
+    String lastName,
+    String group,
+    double averageMark,
+  ) {
+    super.getScholarship2(firstName, lastName, group, averageMark);
   }
 }
